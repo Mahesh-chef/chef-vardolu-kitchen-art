@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChefHat, Knife } from 'lucide-react';
+import { ChefHat, Utensils } from 'lucide-react';
 
 const ProjectsSection = () => {
   const projects = [
@@ -35,9 +35,9 @@ const ProjectsSection = () => {
       <Card className="bg-white/90 backdrop-blur-sm shadow-xl border-orange-200">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl text-gray-800 flex items-center justify-center space-x-3">
-            <Knife className="w-8 h-8 text-orange-500 transform rotate-45" />
+            <Utensils className="w-8 h-8 text-orange-500 transform rotate-45" />
             <span>Featured Projects</span>
-            <Knife className="w-8 h-8 text-orange-500 transform -rotate-45" />
+            <Utensils className="w-8 h-8 text-orange-500 transform -rotate-45" />
           </CardTitle>
         </CardHeader>
         <CardContent>

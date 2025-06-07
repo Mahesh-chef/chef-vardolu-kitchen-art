@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChefHat, Knife } from 'lucide-react';
+import { ChefHat, Utensils } from 'lucide-react';
 
 const ExperienceSection = () => {
   const experiences = [
@@ -44,7 +44,7 @@ const ExperienceSection = () => {
                 <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102">
                   <div className="flex items-start space-x-4">
                     <div className="bg-gradient-to-br from-orange-400 to-red-500 p-3 rounded-full">
-                      <Knife className="w-6 h-6 text-white" />
+                      <Utensils className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-800 mb-1">{exp.position}</h3>
@@ -66,7 +66,7 @@ const ExperienceSection = () => {
                 
                 {index < experiences.length - 1 && (
                   <div className="flex justify-center my-4">
-                    <Knife className="w-6 h-6 text-orange-300 transform rotate-90" />
+                    <Utensils className="w-6 h-6 text-orange-300 transform rotate-90" />
                   </div>
                 )}
               </div>

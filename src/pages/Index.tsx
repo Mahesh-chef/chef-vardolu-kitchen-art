@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ChefHat, Knife, Phone, Linkedin, Image } from 'lucide-react';
+import { ChefHat, Utensils, Phone, Linkedin, Image } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
@@ -86,9 +86,9 @@ const Index = () => {
               <div className="flex space-x-2">
                 {[
                   { id: 'about', label: 'About', icon: ChefHat },
-                  { id: 'education', label: 'Education', icon: Knife },
-                  { id: 'experience', label: 'Experience', icon: Knife },
-                  { id: 'projects', label: 'Projects', icon: Knife },
+                  { id: 'education', label: 'Education', icon: Utensils },
+                  { id: 'experience', label: 'Experience', icon: Utensils },
+                  { id: 'projects', label: 'Projects', icon: Utensils },
                   { id: 'contact', label: 'Contact', icon: Phone }
                 ].map(({ id, label, icon: Icon }) => (
                   <Button
@@ -118,13 +118,13 @@ const Index = () => {
 
       {/* Floating Knife Elements */}
       <div className="absolute top-1/4 left-8 text-orange-300 opacity-30 transform rotate-45 animate-pulse">
-        <Knife className="w-12 h-12" />
+        <Utensils className="w-12 h-12" />
       </div>
       <div className="absolute top-1/2 right-8 text-red-300 opacity-30 transform -rotate-45 animate-pulse">
-        <Knife className="w-10 h-10" />
+        <Utensils className="w-10 h-10" />
       </div>
       <div className="absolute bottom-1/4 left-1/2 text-yellow-400 opacity-30 transform rotate-12 animate-pulse">
-        <Knife className="w-8 h-8" />
+        <Utensils className="w-8 h-8" />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChefHat, Knife } from 'lucide-react';
+import { ChefHat, Utensils } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -10,7 +10,7 @@ const AboutSection = () => {
           <CardTitle className="text-3xl text-gray-800 flex items-center justify-center space-x-3">
             <ChefHat className="w-8 h-8 text-orange-500" />
             <span>About Me</span>
-            <Knife className="w-8 h-8 text-orange-500" />
+            <Utensils className="w-8 h-8 text-orange-500" />
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center space-y-6">

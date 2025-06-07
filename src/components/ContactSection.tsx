@@ -1,7 +1,6 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Phone, Linkedin, ChefHat, Knife } from 'lucide-react';
+import { Phone, Linkedin, ChefHat, Utensils } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -47,7 +46,7 @@ const ContactSection = () => {
               <div className="flex items-center justify-center space-x-4 mb-4">
                 <ChefHat className="w-8 h-8 text-orange-500" />
                 <h3 className="text-2xl font-bold text-gray-800">Download Resume</h3>
-                <Knife className="w-8 h-8 text-orange-500" />
+                <Utensils className="w-8 h-8 text-orange-500" />
               </div>
               <p className="text-gray-600 mb-6">
                 Get a detailed overview of my culinary journey, skills, and achievements

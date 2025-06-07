@@ -1,5 +1,5 @@
 
-import { ChefHat, Knife } from 'lucide-react';
+import { ChefHat, Utensils } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -17,9 +17,9 @@ const Header = () => {
           </div>
           
           <div className="flex items-center space-x-2">
-            <Knife className="w-6 h-6 text-orange-500 transform rotate-45" />
+            <Utensils className="w-6 h-6 text-orange-500 transform rotate-45" />
             <span className="text-gray-600 font-medium">Professional Portfolio</span>
-            <Knife className="w-6 h-6 text-orange-500 transform -rotate-45" />
+            <Utensils className="w-6 h-6 text-orange-500 transform -rotate-45" />
           </div>
         </div>
       </div>

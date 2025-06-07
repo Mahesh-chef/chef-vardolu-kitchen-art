@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ChefHat, Utensils, Phone, Linkedin, Image } from 'lucide-react';
+import { ChefHat, Utensils, Phone, Linkedin, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
@@ -9,9 +9,11 @@ import EducationSection from '@/components/EducationSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
+import AIImageGenerator from '@/components/AIImageGenerator';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [profileImage, setProfileImage] = useState<string | null>(null);
 
   const renderSection = () => {
     switch (activeSection) {
@@ -52,11 +54,27 @@ const Index = () => {
         <div className="text-center mb-12 animate-fade-in">
           <div className="relative inline-block mb-6">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-8 border-orange-400 shadow-2xl bg-gradient-to-br from-orange-200 to-yellow-200">
-              <Image className="w-full h-full object-cover" />
+              {profileImage ? (
+                <img src={profileImage} alt="Chef Maheshwar" className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <User className="w-24 h-24 text-orange-600" />
+                </div>
+              )}
             </div>
             <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-3 shadow-lg animate-bounce">
               <ChefHat className="w-8 h-8 text-orange-800" />
             </div>
+          </div>
+
+          {/* AI Image Generator for Profile */}
+          <div className="max-w-md mx-auto mb-6">
+            <AIImageGenerator
+              prompt="Professional chef portrait, wearing chef hat and uniform, friendly smile, professional kitchen background, high quality, realistic"
+              onImageGenerated={setProfileImage}
+              buttonText="Generate Profile Picture"
+              size={{ width: 512, height: 512 }}
+            />
           </div>
           
           <h1 className="text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">

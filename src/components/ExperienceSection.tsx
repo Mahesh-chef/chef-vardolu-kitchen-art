@@ -1,29 +1,43 @@
 
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChefHat, Utensils } from 'lucide-react';
+import { ChefHat, Utensils, User } from 'lucide-react';
+import AIImageGenerator from './AIImageGenerator';
 
 const ExperienceSection = () => {
+  const [experienceImages, setExperienceImages] = useState<{ [key: number]: string }>({});
+
+  const handleImageGenerated = (index: number, imageUrl: string) => {
+    setExperienceImages(prev => ({
+      ...prev,
+      [index]: imageUrl
+    }));
+  };
+
   const experiences = [
     {
       position: "Executive Chef",
       restaurant: "The Golden Spoon",
       period: "2022 - Present",
       description: "Leading a team of 15 chefs, creating seasonal menus, and maintaining Michelin star standards",
-      achievements: ["Increased revenue by 30%", "Won Best Chef Award 2023", "Implemented sustainable practices"]
+      achievements: ["Increased revenue by 30%", "Won Best Chef Award 2023", "Implemented sustainable practices"],
+      imagePrompt: "Luxury fine dining restaurant kitchen, executive chef leading team, professional kitchen equipment, elegant plating, Michelin star quality"
     },
     {
       position: "Sous Chef",
       restaurant: "Culinary Excellence",
       period: "2020 - 2022",
       description: "Managed kitchen operations, developed signature dishes, and trained junior chefs",
-      achievements: ["Reduced food waste by 25%", "Created 20+ signature dishes", "Mentored 10+ junior chefs"]
+      achievements: ["Reduced food waste by 25%", "Created 20+ signature dishes", "Mentored 10+ junior chefs"],
+      imagePrompt: "Busy restaurant kitchen, sous chef coordinating with team, signature dishes being prepared, professional cooking"
     },
     {
       position: "Line Cook",
       restaurant: "Flavor Town",
       period: "2018 - 2020",
       description: "Specialized in grill and sauté stations, maintained high-quality standards during peak hours",
-      achievements: ["Perfect food safety record", "Promoted within 6 months", "Mastered multiple stations"]
+      achievements: ["Perfect food safety record", "Promoted within 6 months", "Mastered multiple stations"],
+      imagePrompt: "Line cook at grill station, sautéing vegetables, fast-paced kitchen environment, professional cooking techniques"
     }
   ];
 
@@ -43,9 +57,32 @@ const ExperienceSection = () => {
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-102">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-br from-orange-400 to-red-500 p-3 rounded-full">
-                      <Utensils className="w-6 h-6 text-white" />
+                    <div className="flex-shrink-0">
+                      <div className="w-24 h-24 rounded-lg overflow-hidden bg-gradient-to-br from-orange-200 to-yellow-200 border-2 border-orange-300">
+                        {experienceImages[index] ? (
+                          <img 
+                            src={experienceImages[index]} 
+                            alt={`${exp.position} at ${exp.restaurant}`}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <User className="w-12 h-12 text-orange-600" />
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* AI Image Generator for this experience */}
+                      <div className="mt-4">
+                        <AIImageGenerator
+                          prompt={exp.imagePrompt}
+                          onImageGenerated={(imageUrl) => handleImageGenerated(index, imageUrl)}
+                          buttonText="Generate Image"
+                          size={{ width: 512, height: 512 }}
+                        />
+                      </div>
                     </div>
+                    
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-800 mb-1">{exp.position}</h3>
                       <p className="text-orange-600 font-medium text-lg mb-2">{exp.restaurant}</p>

@@ -1,11 +1,130 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import { ChefHat, Knife, Phone, Linkedin, Image } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import Header from '@/components/Header';
+import AboutSection from '@/components/AboutSection';
+import EducationSection from '@/components/EducationSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('about');
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'about':
+        return <AboutSection />;
+      case 'education':
+        return <EducationSection />;
+      case 'experience':
+        return <ExperienceSection />;
+      case 'projects':
+        return <ProjectsSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return <AboutSection />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-br from-orange-100 via-yellow-50 to-red-100 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-orange-300 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 right-20 w-24 h-24 bg-yellow-400 rounded-full animate-bounce"></div>
+        <div className="absolute bottom-20 left-20 w-28 h-28 bg-red-300 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-20 h-20 bg-orange-400 rounded-full animate-bounce"></div>
+        {/* Animal silhouettes */}
+        <div className="absolute top-32 left-1/4 text-6xl opacity-20 animate-float">🐟</div>
+        <div className="absolute top-1/3 right-1/4 text-5xl opacity-20 animate-float">🐄</div>
+        <div className="absolute bottom-1/3 left-1/3 text-4xl opacity-20 animate-float">🐔</div>
+        <div className="absolute bottom-20 right-1/3 text-5xl opacity-20 animate-float">🦐</div>
+      </div>
+
+      <Header />
+      
+      <div className="container mx-auto px-4 py-8 relative z-10">
+        {/* Hero Section */}
+        <div className="text-center mb-12 animate-fade-in">
+          <div className="relative inline-block mb-6">
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-8 border-orange-400 shadow-2xl bg-gradient-to-br from-orange-200 to-yellow-200">
+              <Image className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute -top-4 -right-4 bg-yellow-400 rounded-full p-3 shadow-lg animate-bounce">
+              <ChefHat className="w-8 h-8 text-orange-800" />
+            </div>
+          </div>
+          
+          <h1 className="text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+            Maheshwar Vardolu
+          </h1>
+          <p className="text-2xl text-gray-600 mb-2">Professional Chef</p>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+            Crafting culinary masterpieces with passion, precision, and years of expertise
+          </p>
+          
+          <div className="flex justify-center space-x-4 mb-8">
+            <Button variant="default" className="bg-orange-500 hover:bg-orange-600 transition-all duration-300 transform hover:scale-105">
+              <Phone className="w-4 h-4 mr-2" />
+              Contact Me
+            </Button>
+            <Button variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50 transition-all duration-300">
+              <Linkedin className="w-4 h-4 mr-2" />
+              LinkedIn
+            </Button>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex justify-center mb-8">
+          <Card className="bg-white/80 backdrop-blur-sm shadow-lg">
+            <CardContent className="p-2">
+              <div className="flex space-x-2">
+                {[
+                  { id: 'about', label: 'About', icon: ChefHat },
+                  { id: 'education', label: 'Education', icon: Knife },
+                  { id: 'experience', label: 'Experience', icon: Knife },
+                  { id: 'projects', label: 'Projects', icon: Knife },
+                  { id: 'contact', label: 'Contact', icon: Phone }
+                ].map(({ id, label, icon: Icon }) => (
+                  <Button
+                    key={id}
+                    variant={activeSection === id ? "default" : "ghost"}
+                    onClick={() => setActiveSection(id)}
+                    className={`transition-all duration-300 ${
+                      activeSection === id 
+                        ? 'bg-orange-500 text-white shadow-lg transform scale-105' 
+                        : 'hover:bg-orange-100 hover:text-orange-600'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 mr-2" />
+                    {label}
+                  </Button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Content Section */}
+        <div className="max-w-4xl mx-auto">
+          {renderSection()}
+        </div>
+      </div>
+
+      {/* Floating Knife Elements */}
+      <div className="absolute top-1/4 left-8 text-orange-300 opacity-30 transform rotate-45 animate-pulse">
+        <Knife className="w-12 h-12" />
+      </div>
+      <div className="absolute top-1/2 right-8 text-red-300 opacity-30 transform -rotate-45 animate-pulse">
+        <Knife className="w-10 h-10" />
+      </div>
+      <div className="absolute bottom-1/4 left-1/2 text-yellow-400 opacity-30 transform rotate-12 animate-pulse">
+        <Knife className="w-8 h-8" />
       </div>
     </div>
   );

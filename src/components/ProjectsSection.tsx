@@ -1,32 +1,31 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChefHat, Utensils } from 'lucide-react';
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Sustainable Farm-to-Table Initiative",
-      description: "Developed partnerships with local farms to create a 100% sustainable menu, reducing carbon footprint by 40%",
-      impact: "Served 10,000+ eco-conscious meals",
-      category: "Sustainability"
+      title: "Lead Line Cook – Viewline Resort Snowmass",
+      description: "Responsible for leading the kitchen team, ensuring high standards in food preparation and service, and adapting quickly to business requirements.",
+      impact: "Managed kitchen operations for over a year, consistently delivering quality and efficiency.",
+      category: "Leadership"
     },
     {
-      title: "Molecular Gastronomy Workshop Series",
-      description: "Created and conducted monthly workshops teaching modern cooking techniques to culinary students",
-      impact: "Trained 200+ aspiring chefs",
-      category: "Education"
+      title: "Chef De Partie – TEN 11 Coffee Boutique",
+      description: "Oversaw kitchen sections, maintained food quality, and contributed to menu development in a fast-paced environment.",
+      impact: "Enhanced kitchen workflow and supported a successful launch in Abu Dhabi.",
+      category: "Culinary"
     },
     {
-      title: "Fusion Cuisine Menu Development",
-      description: "Designed innovative Asian-European fusion menu that became the restaurant's signature offering",
-      impact: "Increased customer satisfaction by 35%",
-      category: "Innovation"
+      title: "Demi Chef De Partie – Shakespeare and Co.",
+      description: "Worked as part of a diverse culinary team, ensuring customer satisfaction and upholding high service standards.",
+      impact: "Contributed to a positive dining experience and team success for nearly five years.",
+      category: "Teamwork"
     },
     {
-      title: "Charity Cooking Events",
-      description: "Organized quarterly cooking events to raise funds for local food banks and community kitchens",
-      impact: "Raised $50,000+ for charity",
-      category: "Community"
+      title: "Chef/Line Chef – Radisson Blu Plaza & Sheraton Hotels",
+      description: "Gained valuable experience in international hotel kitchens, focusing on skill development and customer service.",
+      impact: "Developed strong culinary fundamentals and adaptability through hands-on learning.",
+      category: "Professional Growth"
     }
   ];
 

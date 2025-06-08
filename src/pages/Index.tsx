@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChefHat, Utensils, Phone, Linkedin, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,6 +27,15 @@ const Index = () => {
       default:
         return <AboutSection />;
     }
+  };
+
+  // Handler functions for action buttons
+  const handleContactClick = () => {
+    window.location.href = 'mailto:mahesh.vardolu789@gmail.com';
+  };
+
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/maheshwar-vardolu-769b18139/', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -66,15 +74,23 @@ const Index = () => {
           </h1>
           <p className="text-2xl text-gray-600 mb-2">Professional Chef</p>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
-            Crafting culinary masterpieces with passion, precision, and years of expertise
+            A young professional with experience in sales, communication, culinary arts, and hotel management. I am able to work under pressure, adapt quickly to business requirements, and deliver excellent customer service. I enjoy new challenges and opportunities for development. Please do not hesitate to contact me for collaboration, professional opportunities, or culinary projects.
           </p>
           
           <div className="flex justify-center space-x-4 mb-8">
-            <Button variant="default" className="bg-orange-500 hover:bg-orange-600 transition-all duration-300 transform hover:scale-105">
+            <Button
+              variant="default"
+              className="bg-orange-500 hover:bg-orange-600 transition-all duration-300 transform hover:scale-105"
+              onClick={handleContactClick}
+            >
               <Phone className="w-4 h-4 mr-2" />
               Contact Me
             </Button>
-            <Button variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50 transition-all duration-300">
+            <Button
+              variant="outline"
+              className="border-orange-500 text-orange-600 hover:bg-orange-50 transition-all duration-300"
+              onClick={handleLinkedInClick}
+            >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
             </Button>

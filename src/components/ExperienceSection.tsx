@@ -1,29 +1,51 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChefHat, Utensils, User } from 'lucide-react';
 
 const ExperienceSection = () => {
   const experiences = [
     {
-      position: "Executive Chef",
-      restaurant: "The Golden Spoon",
-      period: "2022 - Present",
-      description: "Leading a team of 15 chefs, creating seasonal menus, and maintaining Michelin star standards",
-      achievements: ["Increased revenue by 30%", "Won Best Chef Award 2023", "Implemented sustainable practices"]
+      position: "Lead Line Cook",
+      restaurant: "Viewline Resort Snowmass, Autograph Collection",
+      period: "June 2023 – Present (1 year 4 months)",
+      description: "Lead Line Cook responsible for leading kitchen operations, maintaining high standards in food preparation and service, and adapting quickly to business requirements.",
+      achievements: [
+        "Managed kitchen operations for over a year with consistent quality and efficiency",
+        "Adapted quickly to changing business needs",
+        "Maintained excellent customer service and teamwork"
+      ]
     },
     {
-      position: "Sous Chef",
-      restaurant: "Culinary Excellence",
-      period: "2020 - 2022",
-      description: "Managed kitchen operations, developed signature dishes, and trained junior chefs",
-      achievements: ["Reduced food waste by 25%", "Created 20+ signature dishes", "Mentored 10+ junior chefs"]
+      position: "Chef De Partie",
+      restaurant: "TEN 11 Coffee Boutique",
+      period: "May 2022 – September 2023 (1 year 5 months)",
+      description: "Oversaw kitchen sections, maintained food quality, and contributed to menu development in a fast-paced Abu Dhabi environment.",
+      achievements: [
+        "Enhanced kitchen workflow and supported a successful launch",
+        "Maintained high standards of food quality and safety",
+        "Contributed to menu innovation and team training"
+      ]
     },
     {
-      position: "Line Cook",
-      restaurant: "Flavor Town",
-      period: "2018 - 2020",
-      description: "Specialized in grill and sauté stations, maintained high-quality standards during peak hours",
-      achievements: ["Perfect food safety record", "Promoted within 6 months", "Mastered multiple stations"]
+      position: "Demi Chef De Partie",
+      restaurant: "Shakespeare and Co.",
+      period: "June 2017 – February 2022 (4 years 9 months)",
+      description: "Worked as part of a diverse culinary team, ensuring customer satisfaction and upholding high service standards in Abu Dhabi.",
+      achievements: [
+        "Contributed to a positive dining experience and team success",
+        "Maintained consistent food quality and service",
+        "Supported training and mentorship of new staff"
+      ]
+    },
+    {
+      position: "Chef / Line Chef (Internship)",
+      restaurant: "Radisson Blu Plaza Hyderabad / Sheraton Hotels & Resorts",
+      period: "June 2016 – December 2016 (7 months)",
+      description: "Gained valuable experience in international hotel kitchens, focusing on skill development and customer service.",
+      achievements: [
+        "Developed strong culinary fundamentals and adaptability",
+        "Learned from hands-on experience in high-volume kitchens",
+        "Demonstrated commitment and eagerness to learn"
+      ]
     }
   ];
 

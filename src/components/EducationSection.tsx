@@ -1,26 +1,25 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Utensils } from 'lucide-react';
 
 const EducationSection = () => {
   const education = [
     {
-      degree: "Culinary Arts Diploma",
-      institution: "International Culinary Institute",
-      year: "2018-2020",
-      description: "Specialized in French cuisine and pastry arts"
+      degree: "Bachelor's Degree in Hotel Management",
+      institution: "Osmania University, Hyderabad",
+      year: "June 2014 – April 2017",
+      description: "Comprehensive study in hotel, motel, and restaurant management, including practical and theoretical aspects of hospitality."
     },
     {
-      degree: "Advanced Food Safety Certification",
-      institution: "Food Safety Authority",
-      year: "2020",
-      description: "HACCP and food safety management systems"
+      degree: "Hotel Management Studies",
+      institution: "WESTIN College of Hotel Management",
+      year: "2014 – 2017",
+      description: "Specialized coursework and hands-on training in culinary arts, food production, and hospitality services."
     },
     {
-      degree: "Wine Sommelier Certification",
-      institution: "Wine & Spirit Education Trust",
-      year: "2021",
-      description: "Wine pairing and beverage management"
+      degree: "High School – Hotel Management Focus",
+      institution: "Vikas High School",
+      year: "June 2011 – April 2012",
+      description: "Completed secondary education with a focus on hotel management fundamentals."
     }
   ];
 
